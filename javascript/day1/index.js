@@ -109,3 +109,83 @@ let username = "Sudhan";
  TDZ End   -> it ends when variable intialization.
  Reference error occurs because when we access let and const variables before
  initialization.*/
+
+//  Task 7: Execution Context
+
+const greet = () => {
+  console.log("Hello");
+};
+
+greet();
+
+/* 1-> Global Execution context created, where greet variable declared and greet() function will be copied as it is.
+   2-> greet() function called , then greet execution context created. Inside the function console runs.
+   3-> Function execution context removed after executed all the code.
+   4-> Back to global execution context
+   5-> Program execution completes. */
+
+// Task 8: Type Conversion Challenge
+
+console.log("10" + 5); // 15
+
+console.log("10" - 5); // 5
+
+console.log(true + 1); // 2
+
+console.log(false + 10); // 10
+
+console.log(Number("100")); // 100
+
+console.log(String(500)); // "500"
+
+// Task 9: Primitive vs Non-Primitive
+
+//Primitive Types
+//String
+  let name="Ajay"
+// Number
+  let rate=300;
+// Boolean
+  let isVerified=false;
+//Undefined
+ let price=undefined;
+ //Null
+ let age=null;
+//  BigInt
+let value=100n
+//Symbol
+let id=Symbol("user")
+
+//  Non-Primitive Types
+// Object
+let person ={
+    name:"Ajay",
+    age=27
+}
+// Array
+let fruits=["grapes","apple","orange" ];
+
+// Function
+
+function printOutput(){
+    return 1
+}
+
+// Task 10: Complete Interview Scenario
+
+var location="chennai"
+function sumOfTwonumbers(isHavingPermission){
+    let a=10
+    function result(){
+        
+        console.log("location",location)
+        // access a in lexical scope
+        if(isHavingPermission){
+            console.log(maxValue)
+            const maxValue=600
+        return a+"20";}
+       return null
+    }
+    result();
+}
+sumOfTwonumbers(true)
