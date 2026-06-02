@@ -81,3 +81,31 @@ level1();
    if variable not found in lexical scope of level3, then it finds variable in lexical scope of level2,
    ie-level1. Also company is not in level1 scope.then its looks upto the 
    global context. It finds the variable and prints it. */
+
+//    Task 5: Hoisting Prediction
+
+console.log(a);
+
+var a = 100;
+
+// output => undefined
+
+/* whenever javascript code runs, global execution context will be created.
+   Every code executed inside global execution context. There will be two phases
+   1=> Memory Creation Phase - All variables declarations and function declarations are allocated in a
+       memory.
+   2=>Code execution phase  - In code execution phase, funtions will be executed and variables would 
+      be initialized. */
+
+// Task 6: TDZ Investigation
+
+console.log(username);
+
+let username = "Sudhan";
+// output => Reference Error
+
+/* Temprol Dead Zone is a period between variable declaration and initialization.
+ TDZ Start -> it starts when variable declarion stage
+ TDZ End   -> it ends when variable intialization.
+ Reference error occurs because when we access let and const variables before
+ initialization.*/
