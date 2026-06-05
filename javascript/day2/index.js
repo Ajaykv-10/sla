@@ -76,3 +76,69 @@ const getTotalSalaryAmount = (salary) => {
 };
 const salaryAmount = getTotalSalaryAmount(20000);
 console.log(salaryAmount);
+
+// Task 9
+
+const convertFarenheit = (celcius) => {
+  const farenheit = (celcius * 9) / 5 + 32;
+  return farenheit;
+};
+convertFarenheit(26);
+
+// Task 10
+
+const oddoreven = (num) => {
+  return num % 2 == 0 ? "even" : "odd";
+};
+oddoreven(2);
+oddoreven(3);
+
+// Task 11
+
+const lengthOfString = (str) => {
+  return str.length;
+};
+console.log("lengthOfString", lengthOfString("Ajay"));
+
+// Task 12
+
+const printName = (name, count) => {
+  for (let i = 0; i < count; i++) {
+    console.log(name);
+  }
+};
+printName("Ajay", 3);
+
+// Task 13
+
+const totalMarks = (...rest) => {
+  return rest.reduce((acc, curr) => acc + curr, 0);
+};
+console.log(totalMarks(67, 78, 87, 98, 85));
+
+// Task 14
+
+const largestNumber = (...rest) => {
+  return Math.max(...rest);
+};
+
+largestNumber(56, 76, 89, 46, 45);
+
+// Task 15
+
+const smallestNumber = (...rest) => {
+  return Math.min(...rest);
+};
+smallestNumber(4, 6, 3, 7, 8);
+
+// Task 16
+
+const totalPrice = (...prices) => {
+  let total = 0;
+  for (let i = 0; i < prices.length; i++) {
+    total += prices[i];
+  }
+  return total;
+};
+
+totalPrice(45, 65, 78, 98);
