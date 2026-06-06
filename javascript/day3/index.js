@@ -103,3 +103,94 @@ atm.withdraw(1000);
 atm.withdraw(2000);
 
 // Task 6
+
+function loginAttemptTracker() {
+  let attemptCount = 0;
+
+  return function () {
+    attemptCount++;
+    console.log(`Login Attempt #${attemptCount}`);
+  };
+}
+
+const login = loginAttemptTracker();
+
+login();
+login();
+login();
+
+// Task 7
+
+function processPayment(callback) {
+  callback();
+}
+
+const gpay = () => {
+  console.log("gpay");
+};
+const phonepe = () => {
+  console.log("phonepe");
+};
+const paytm = () => {
+  console.log("paytm");
+};
+processPayment(gpay);
+processPayment(phonepe);
+processPayment(paytm);
+
+// Task 8
+
+function executeAction(callback) {
+  callback();
+}
+const loginuser = () => {
+  console.log("User Login succesfully");
+};
+const logout = () => {
+  console.log("User logged out successfully");
+};
+const register = () => {
+  console.log("User registered");
+};
+
+executeAction(loginuser);
+executeAction(logout);
+executeAction(register);
+
+// Task 9
+
+console.log("Sending Notification...");
+
+setTimeout(() => {
+  console.log("Notification Sent");
+}, 3000);
+
+// Task 10
+
+function orderProcessingSystem() {
+  let orderCount = 0;
+  return (cb) => {
+    orderCount++;
+    console.log("Order Number", orderCount);
+    console.log("Processing...");
+    setTimeout(() => {
+      cb();
+    });
+  };
+}
+
+const mobileOrder = () => {
+  console.log("Mobile Ordered");
+};
+
+const laptopOrder = () => {
+  console.log("Laptop ordered");
+};
+const tvOrder = () => {
+  console.log("TV ordered");
+};
+
+const order = orderProcessingSystem();
+order(tvOrder);
+order(laptopOrder);
+order(mobileOrder);
