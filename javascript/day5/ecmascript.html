@@ -1,0 +1,276 @@
+<script>
+// Task 1
+const name = "Ajay";
+const course = "React JS";
+const city = "Chennai";
+const institute = "SLA Institute";
+
+const studentProfile = `
+Student Profile
+---------------
+Name      : ${name}
+Course    : ${course}
+City      : ${city}
+Institute : ${institute}
+`;
+
+console.log(studentProfile);
+
+// Task 2
+const calculateYearlySalary = (employeeName, monthlySalary) => {
+  return `${employeeName}'s Yearly Salary is ₹${monthlySalary * 12}`;
+};
+
+console.log(calculateYearlySalary("Ajay", 50000));
+
+// Task 3
+
+const getDiscountedPrice = (price, discount) => {
+  return price - (price * discount) / 100;
+};
+
+console.log(getDiscountedPrice(1000, 20));
+
+// Task 4
+
+const registerUser = (username, role = "User") => {
+  console.log(`Username: ${username}`);
+  console.log(`Role: ${role}`);
+};
+
+registerUser("Ajay");
+registerUser("AdminUser", "Admin");
+
+// Task 5
+
+const calculateBill = (...prices) => {
+  const total = prices.reduce((sum, price) => sum + price, 0);
+  return total;
+};
+
+console.log(calculateBill(100, 200, 300, 400));
+
+// Task 6
+
+const frontendTech = ["HTML", "CSS", "JavaScript", "React"];
+const backendTech = ["Node.js", "Express.js", "MongoDB"];
+
+const technologies = [...frontendTech, ...backendTech];
+
+console.log(technologies);
+
+// Task 7 
+
+const employee = {
+  id: 101,
+  name: "Ajay",
+  designation: "Frontend Developer"
+};
+
+const updatedEmployee = {
+  ...employee,
+  department: "IT",
+  experience: "3 Years",
+  salary: 600000
+};
+
+console.log("Original Employee:", employee);
+console.log("Updated Employee:", updatedEmployee);
+
+// Task 8
+
+const student = {
+  id: 101,
+  firstName: "Ajay",
+  selectedCourse: "React JS",
+  locations: "Chennai",
+  institution: "SLA Institute"
+};
+
+// Object Destructuring
+const { id, firstName, selectedCourse, locations, institution } = student;
+
+console.log("ID:", id);
+console.log("Name:", firstName);
+console.log("Course:", selectedCourse);
+console.log("City:", location);
+console.log("Institute:", institution);
+
+// Task 9
+
+const empId = 101;
+const empName = "Ajay";
+const designation = "Frontend Developer";
+const place = "Chennai";
+
+const employeeDetails = {
+  empId,
+  empName,
+  designation,
+  place
+};
+
+console.log(employeeDetails);
+
+// Task 10
+const user = {
+  id: 101,
+  name: "Ajay",
+  profile: {
+    email: "ajay@example.com",
+    address: {
+      city: "Chennai",
+      state: "Tamil Nadu"
+    }
+  }
+};
+
+// Safe access using Optional Chaining
+const email = user.profile?.email ?? "Email Not Available";
+const userCity = user.profile?.address?.city ?? "City Not Available";
+const country = user.profile?.address?.country ?? "Country Not Available";
+
+console.log("User Dashboard");
+console.log("--------------");
+console.log("Name:", user.name);
+console.log("Email:", email);
+console.log("City:", userCity);
+console.log("Country:", country);
+
+// Task 11
+
+
+const getHighestMark = (...marks) => {
+  return Math.max(...marks);
+};
+
+console.log(getHighestMark(78, 92, 85, 67, 95, 88));
+
+// Task 12
+
+const frontendCourses = ["HTML", "CSS", "JavaScript"];
+const backendCourses = ["Node.js", "Express.js"];
+const databaseCourses = ["MongoDB", "MySQL"];
+
+const allCourses = [
+  ...frontendCourses,
+  ...backendCourses,
+  ...databaseCourses
+];
+
+console.log(allCourses);
+
+// Task 13
+
+const product={
+    name:"watch",
+    price:3000,
+    stock:3
+}
+
+function updateStock(product){
+const clonedProduct={...product}
+const updatedProduct={
+    ...clonedProduct,stock:2
+}
+console.log("updatedProduct",updatedProduct)
+console.log("product",product)
+
+}
+
+updateStock(product)
+
+
+// Task 14
+
+const displayUserInfo = ({ id, name, email, city, role }) => {
+  console.log(`
+User Information
+----------------
+ID    : ${id}
+Name  : ${name}
+Email : ${email}
+City  : ${city}
+Role  : ${role}
+`);
+};
+
+const userObj = {
+  id: 101,
+  name: "Ajay",
+  email: "ajay@example.com",
+  city: "Chennai",
+  role: "Frontend Developer"
+};
+
+displayUserInfo(userObj);
+
+// Task 15
+
+
+
+const employeeManagement=()=>{
+const employees=[{
+    name:"Ajay",
+    place:"Nagercoil",
+    company:"Wizi",
+    salary:50000
+}]
+return {
+    add(name,place="chennai",company,salary){
+        employees=[...employees,{name,place,company,salary}]
+          console.log(`Employee added successfully.`);
+    },
+    update(id,update){
+employees=employees.map((emp)=>(emp.id===id? {...emp,...update}:emp))
+console.log(`Employee ${id} updated successfully.`);
+    },
+     displayEmployee: (id) => {
+    const employee = employees.find((emp) => emp.id === id);
+
+    if (!employee) {
+      console.log("Employee not found");
+      return;
+    }
+
+    const {
+      name,
+      company,
+      salary,
+      place,
+    } = employee;
+
+    console.log(`
+Employee Details
+----------------
+Name       : ${name}
+Company    : ${company}
+Salary     : ₹${salary}
+Place       : ${place ?? "Not Available"}
+
+`);
+  },
+    calculateSalary: (...salaries) => {
+    const totalSalary = salaries.reduce(
+      (total, salary) => total + salary,
+      0
+    );
+
+    console.log(`Total Salary Expense: ₹${totalSalary}`);
+    return totalSalary;
+  },
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
