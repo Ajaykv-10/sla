@@ -210,7 +210,8 @@ displayUserInfo(userObj);
 
 
 const employeeManagement=()=>{
-const employees=[{
+let employees=[{
+  id:1,
     name:"Ajay",
     place:"Nagercoil",
     company:"Wizi",
@@ -218,7 +219,7 @@ const employees=[{
 }]
 return {
     add(name,place="chennai",company,salary){
-        employees=[...employees,{name,place,company,salary}]
+        employees=[...employees,{name,place,company,salary,id:employees.length}]
           console.log(`Employee added successfully.`);
     },
     update(id,update){
@@ -250,9 +251,9 @@ Place       : ${place ?? "Not Available"}
 
 `);
   },
-    calculateSalary: (...salaries) => {
-    const totalSalary = salaries.reduce(
-      (total, salary) => total + salary,
+    calculateSalary: () => {
+    const totalSalary = employees.reduce(
+      (total, emp) => total + emp.salary,
       0
     );
 
@@ -263,6 +264,11 @@ Place       : ${place ?? "Not Available"}
 }
 }
 
+const employeeManage=employeeManagement()
+employeeManage.add("Vasanth","dubai","INX Company",80000)
+employeeManage.update(1,{name:"Ajay"})
+employeeManage.displayEmployee(1)
+employeeManage.calculateSalary()
 
 
 
