@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+input{
+    @apply border-2 border-gray-400 rounded-md p-2;
+}
+.label-input{
+    @apply flex justify-between items-center mb-2;
+}
