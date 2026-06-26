@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export const Register = () => {
     const [resiterData,setRegisterData]=useState({name:'',mobile:"",email:'',password:''})
-
+const navigate=useNavigate()
     const handleOnChange=(e)=>{
         setRegisterData((prev)=>({...prev,[e.target.name]:e.target.value}))
     }
@@ -24,6 +25,7 @@ export const Register = () => {
     localStorage.setItem("userDatabase", JSON.stringify(userDatabase))
 setRegisterData({name:'',mobile:"",email:'',password:''})
 alert("User registered successfully")
+navigate("/login")
 }
 
   return (
@@ -43,6 +45,9 @@ alert("User registered successfully")
                 </div>
                 <button type='submit' className='bg-amber-400 text-black font-semibold rounded-md px-4 py-2 cursor-pointer'>Sign In</button>
             </form>
+            <button onClick={() => navigate("/login")} className=' font-semibold rounded-md px-4 py-2 cursor-pointer mt-4'>
+                Already have an account? Login
+            </button>
         </div>
     </div>
   )

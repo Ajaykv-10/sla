@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Home = () => {
+const [CurrentUser,setCurrentUser]=useState({name:""})
+
+useEffect(()=>{
+  const userData=JSON.parse(localStorage.getItem("auth"))
+  setCurrentUser(userData)
+
+
+},[])
+
   return (
-    <div>Home</div>
+    <div>Welcome {CurrentUser.name}</div>
   )
 }
 
